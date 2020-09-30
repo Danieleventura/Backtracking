@@ -1,0 +1,43 @@
+public class Main {
+
+	public static void main(String[] args) {
+		
+		int[] pesoA= {2, 4, 6, 9};
+		int[] valorA = {6 ,8 ,10, 9};
+		int tamanhoMochilaA = 8;
+
+		int[] peso= {7, 3, 4 ,6};
+		int[] valorB = {42, 12, 40, 14};
+		int tamanhoMochilaB = 10;
+		
+		
+		backtracking (peso, 0,  valorB,  tamanhoMochilaB);
+		backtracking (pesoA, 0,  valorA,  tamanhoMochilaA);
+		System.out.print("\n");
+		
+		
+	}
+	
+	public static Object  backtracking (int[] peso, int posicao,  int[] valor,int tamanhoMochila) {
+		
+		
+		for (int i = 0; i < peso.length; i++) {
+	
+			if (posicao != i ) { 
+				 if( (peso[posicao] + peso[i]) == tamanhoMochila) {
+						 System.out.printf("\n{ %d, %d}--> %d", peso[posicao], peso[i], valor[posicao] + valor[i] );
+						 }
+					
+					 }}
+		if (posicao < peso.length-1) { 
+			return backtracking (peso, posicao+1, valor, tamanhoMochila);
+			}
+		else
+			
+			return System.out.printf("\nMochila Cheia");
+		
+
+		}
+
+		
+	}
